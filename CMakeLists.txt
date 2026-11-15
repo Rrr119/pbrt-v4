@@ -592,6 +592,7 @@ set (PBRT_SOURCE_HEADERS
 SET (PBRT_CPU_SOURCE
   src/pbrt/cpu/aggregates.cpp
   src/pbrt/cpu/integrators.cpp
+  src/pbrt/cpu/photonmap.cpp
   src/pbrt/cpu/primitive.cpp
   src/pbrt/cpu/render.cpp
 )
@@ -599,6 +600,7 @@ SET (PBRT_CPU_SOURCE
 SET (PBRT_CPU_SOURCE_HEADERS
   src/pbrt/cpu/aggregates.h
   src/pbrt/cpu/integrators.h
+  src/pbrt/cpu/photonmap.h
   src/pbrt/cpu/primitive.h
   src/pbrt/cpu/render.h
 )

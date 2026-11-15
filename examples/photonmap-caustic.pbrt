@@ -1,0 +1,31 @@
+# Photon-map comparison scene. Render from the repository root:
+#
+#   build/pbrt --spp 128 --outfile images/photonmap-caustic.png \
+#       examples/photonmap-caustic.pbrt
+#
+# The low-resolution path-tracing comparison uses examples/path-caustic.pbrt.
+
+Sampler "independent"
+    "integer pixelsamples" [ 128 ]
+Film "rgb"
+    "string filename" [ "photonmap-caustic.exr" ]
+    "integer xresolution" [ 640 ]
+    "integer yresolution" [ 480 ]
+LookAt 0 1.55 4.8
+    0 0.85 0
+    0 1 0
+Camera "perspective"
+    "float fov" [ 42 ]
+
+Integrator "photonmap"
+    "integer maxdepth" [ 6 ]
+    "integer maxphotondepth" [ 12 ]
+    "integer photons" [ 4000000 ]
+    "integer causticphotons" [ 1000000 ]
+    "float radius" [ 0.035 ]
+    "float causticradius" [ 0.025 ]
+    "integer maxphotons" [ 100 ]
+    "bool caustics" [ true ]
+    "integer seed" [ 1 ]
+
+Include "caustic-world.pbrt"

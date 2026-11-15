@@ -1,0 +1,17 @@
+{
+  "root": "/home/dev/feedback/uid21336",
+  "B": "/home/dev/feedback/uid21336",
+  "sha": "b0bdf461ba5dd6504b70ebf0932acc0fe7aa744f",
+  "wslDistro": "Ubuntu-26.04",
+  "source": {
+    "owner": "mmp",
+    "repo": "pbrt-v4",
+    "sha": "b0bdf461ba5dd6504b70ebf0932acc0fe7aa744f"
+  },
+  "fork": {
+    "owner": "Rrr119",
+    "repo": "pbrt-v4",
+    "cloneUrl": "https://github.com/Rrr119/pbrt-v4.git"
+  },
+  "at": "2026-11-15T18:18:12.435Z"
+}

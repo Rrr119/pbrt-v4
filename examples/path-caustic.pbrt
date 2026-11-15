@@ -1,0 +1,21 @@
+# Path-tracing comparison for examples/photonmap-caustic.pbrt.
+#
+#   build/pbrt --spp 4096 --outfile images/caustic-path-reference.png \
+#       examples/path-caustic.pbrt
+
+Sampler "independent"
+    "integer pixelsamples" [ 4096 ]
+Film "rgb"
+    "string filename" [ "caustic-path-reference.exr" ]
+    "integer xresolution" [ 640 ]
+    "integer yresolution" [ 480 ]
+LookAt 0 1.55 4.8
+    0 0.85 0
+    0 1 0
+Camera "perspective"
+    "float fov" [ 42 ]
+
+Integrator "path"
+    "integer maxdepth" [ 12 ]
+
+Include "caustic-world.pbrt"

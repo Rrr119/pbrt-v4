@@ -64,6 +64,11 @@ Major changes include:
     sampling ([Hart et al. 2019](https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.14060)).
   * An implementation of Bitterli et al's environment light [portal sampling](https://benedikt-bitterli.me/pmems.html)
     technique is included.
+* A photon-mapping integrator is available on the CPU for scenes with
+  difficult caustics and global illumination.  It builds separate global and
+  caustic photon maps and supports the existing scene description format; see
+  [docs/photonmap.md](docs/photonmap.md) for parameters and an example
+  comparison.
 * Rendering can now be performed in absolute physical units with modelling of real cameras as per [Langlands & Fascione 2020](https://github.com/wetadigital/physlight).
 * And also...
   * Various improvements have been made to the `Sampler` classes, including

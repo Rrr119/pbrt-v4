@@ -82,8 +82,11 @@ void RenderCPU(BasicScene &parsedScene) {
         parsedScene.integrator.name != "aov")
         Warning("No light sources defined in scene; rendering a black image.");
 
-    if (film.Is<GBufferFilm>() && !(parsedScene.integrator.name == "path" ||
-                                    parsedScene.integrator.name == "volpath"))
+    if (film.Is<GBufferFilm>() &&
+        !(parsedScene.integrator.name == "path" ||
+          parsedScene.integrator.name == "volpath" ||
+          parsedScene.integrator.name == "photonmap" ||
+          parsedScene.integrator.name == "photon"))
         Warning("GBufferFilm is not supported by the \"%s\" integrator. The channels "
                 "other than R, G, B will be zero.",
                 parsedScene.integrator.name);

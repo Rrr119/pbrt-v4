@@ -4,6 +4,8 @@
 
 #include <pbrt/cpu/integrators.h>
 
+#include <pbrt/cpu/photonmap.h>
+
 #include <pbrt/bsdf.h>
 #include <pbrt/bssrdf.h>
 #include <pbrt/cameras.h>
@@ -3682,6 +3684,9 @@ std::unique_ptr<Integrator> Integrator::Create(
     else if (name == "sppm")
         integrator = SPPMIntegrator::Create(parameters, colorSpace, camera, sampler,
                                             aggregate, lights, loc);
+    else if (name == "photonmap" || name == "photon")
+        integrator = PhotonMapIntegrator::Create(parameters, colorSpace, camera, sampler,
+                                                 aggregate, lights, loc);
     else
         ErrorExit(loc, "%s: integrator type unknown.", name);
 
